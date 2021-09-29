@@ -1,9 +1,6 @@
 var express = require('express')
-const https = require('https')
-const fs = require('fs')
+const http = require('http')
 const bodyParser = require('body-parser')
-const multer = require('multer') // v1.0.5
-const upload = multer() // for parsing multipart/form-data
 var cors = require("cors");
 var app = express();
 app.use(cors());
@@ -11,14 +8,14 @@ app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded())
 
 app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'https://matic.supply');
+    res.setHeader('Access-Control-Allow-Origin', 'https://faucet.dchan.network');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
 });
 
-https.createServer({
+http.createServer({
     key: fs.readFileSync('privkey.pem'),
     cert: fs.readFileSync('cert.pem'),
     ca: fs.readFileSync('chain.pem')
@@ -303,6 +300,11 @@ app.get("/:network/:token/:address/:captcha", function (req, res) {
 })
 
 async function startTransfer(ip, address, token, amount, network) {
+    console.log({
+        startTransfer: {
+            ip, address, token, amount, network
+        }
+    })
     let addressException = await getException(address, token)
     let ipException = await getException(ip, token)
 

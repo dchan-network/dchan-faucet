@@ -5,11 +5,11 @@
 **/
 
 .accordion {
-    text-align: left;
-    font: Monaco,Consolas,"Andale  Mono","DejaVu Sans Mono",monospace;
-    border: 5px solid rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-  }
+  text-align: left;
+  font: Monaco, Consolas, "Andale  Mono", "DejaVu Sans Mono", monospace;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
 
 @media only screen and (orientation: landscape) {
   .accordion {
@@ -25,35 +25,34 @@
   }
 }
 
-
 .accordion__item + .accordion__item {
-    border-top: 5px solid rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
+  border-top: 5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
 }
 
 .accordion__button {
-    background-color: #232123;
-    color: #f4f4f4;
-    cursor: pointer;
-    padding: 18px;
-    text-align: left;
-    border: none;
-    transition: 0.3s;
+  background-color: #d6daf0;
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  text-align: left;
+  border: none;
+  transition: 0.3s;
 }
 
 .accordion__button:hover {
-    background-color: #444;
+  background-color: #444;
 }
 
 .accordion__button:before {
-    display: inline-block;
-    content: '';
-    height: 1vh;
-    width: 1vh;
-    margin-right: 12px;
-    border-bottom: 2px solid currentColor;
-    border-right: 2px solid currentColor;
-    transform: rotate(-45deg);
+  display: inline-block;
+  content: "";
+  height: 1vh;
+  width: 1vh;
+  margin-right: 12px;
+  border-bottom: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(-45deg);
 }
 
 @media only screen and (orientation: landscape) {
@@ -70,26 +69,26 @@
   }
 }
 
-.accordion__button[aria-expanded='true']::before,
-.accordion__button[aria-selected='true']::before {
-    transform: rotate(45deg);
+.accordion__button[aria-expanded="true"]::before,
+.accordion__button[aria-selected="true"]::before {
+  transform: rotate(45deg);
 }
 
 [hidden] {
-    display: none;
+  display: none;
 }
 
 .accordion__panel {
-    padding: 20px;
-    animation: fadein 0.35s ease-in;
+  padding: 20px;
+  animation: fadein 0.35s ease-in;
 }
 
 code {
-    color: #7CFC00;
+  color: #117743;
 }
 
 a {
-  color: #7CFC00;
+  color: #117743;
 }
 
 /* -------------------------------------------------- */
@@ -97,11 +96,11 @@ a {
 /* -------------------------------------------------- */
 
 @keyframes fadein {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }

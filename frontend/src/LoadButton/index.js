@@ -6,9 +6,11 @@ function LoadButton({ text, loadingText, color, disabled, hidden, onClick }) {
 
   const onTriggerRun = useCallback(() => {
     setLoading(true);
-    onClick().then(() => {
-      setLoading(false);
-    });
+    onClick()?.then(() => {
+      setLoading(false)
+    }).catch(() => {
+      setLoading(false)
+    }) || setLoading(false);
   }, [onClick]);
 
   return (
@@ -17,7 +19,6 @@ function LoadButton({ text, loadingText, color, disabled, hidden, onClick }) {
       disabled={isLoading | disabled}
       onClick={isLoading ? null : onTriggerRun}
       style={{
-        margin: "10px",
         backgroundColor: color,
         display: hidden ? "none" : true,
       }}

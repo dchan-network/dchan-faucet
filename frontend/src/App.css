@@ -3,17 +3,17 @@
 }
 
 html {
-  background-color: #232123;
+  background-color: #eef2ff;
 }
 
 .App-banner {
-  margin-top: 7vh;
-  margin-bottom: 7vh;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
   justify-content: center;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  max-height: 10vh;
-  color: white;
+  color: black;
 }
 
 .App-header {
@@ -22,10 +22,10 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: black;
 }
 
-.App-logo {
+.App-polygon {
   width: 10vh;
   height: auto;
   pointer-events: none;

@@ -24,6 +24,10 @@
   }
 }
 
-.BackupButton:disabled {opacity: 0.5}
+.BackupButton:disabled {
+  opacity: 0.5;
+}
 
-.BackupButton:hover:enabled {opacity: 0.8}
+.BackupButton:hover:enabled {
+  opacity: 0.8;
+}

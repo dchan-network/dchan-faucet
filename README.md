@@ -1,6 +1,6 @@
 # Polygon mainnet faucet server/frontend
 
-App available at https://matic.supply
+App available at https://faucet.dchan.network
 
 built upon: [locals-faucetserver](https://github.com/sponnet/locals-faucetserver) and [matic-faucet](https://github.com/nglglhtr/matic-faucet)
 
@@ -105,3 +105,13 @@ Status code: 500
 * `200` : Request OK
 * `400` : Invalid address
 * `500` : error (greylisted/ tx error)
+
+# Docker
+## Setup
+* `cp docker-compose.dev.yml docker-compose.yml`
+
+## Serve content
+* `./bin/docker_start.sh`
+
+### Development
+* `./bin/docker_bash.sh`

@@ -1,0 +1,28 @@
+version: "2"
+services:
+  www:
+    image: httpd:2.4
+    restart: unless-stopped
+    depends_on:
+      - server
+    volumes:
+      - "$PWD/frontend/build:/usr/local/apache2/htdocs/"
+    ports:
+      - 127.0.0.1:3000:80
+  frontend:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      - server
+    volumes:
+      - ./frontend:/dapp
+    ports:
+      - 127.0.0.1:3001:3000
+  server:
+    build: .
+    restart: unless-stopped
+    entrypoint: "/dapp/bin/start.sh"
+    volumes:
+      - ./server:/dapp
+    ports:
+      - 127.0.0.1:3002:3000

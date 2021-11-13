@@ -15,11 +15,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-http.createServer({
-    key: fs.readFileSync('privkey.pem'),
-    cert: fs.readFileSync('cert.pem'),
-    ca: fs.readFileSync('chain.pem')
-}, app).listen(3000, () => {
+http.createServer(app).listen(3000, () => {
     console.log('Listening...')
 })
 
@@ -364,7 +360,7 @@ async function transferEth(_to, _amount, network) {
         gas: 314150,
         gasPrice: _gasPrice
     }
-    console.log(options.to);
+    console.log({options});
     let r = await web3.eth.sendTransaction(options)
         .on('receipt', (receipt) => {
             console.log('transfer successful!', receipt.transactionHash)
